@@ -1,0 +1,11 @@
+[
+  {
+    "namespace": "http://www.28msec.com/modules/collections",
+    "options": {
+      "prefixes": ["db"],
+      "pos": { "sl": 0, "sc": 0, "el": 0, "ec": 0 },
+      "type": "module",
+      "override": true
+    }
+  }
+]

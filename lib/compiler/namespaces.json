@@ -1,0 +1,11 @@
+[
+  {
+    "namespace" : "http://www.w3.org/2005/xpath-functions",
+    "options" : {
+      "prefixes": ["fn"],
+      "pos": { "sl": 0, "sc": 0, "el": 0, "ec": 0 },
+      "type": "module",
+      "override": true
+    }
+  }
+]

@@ -1,3 +1,57 @@
+#GRANTMACKEN ROUGH NOTES:
+
+Add 'config.json' file so user can
+ - set default options passed to xQlint
+ - specify alt paths for lexer and parser
+
+Add json files to lib/compliler dir in order to 
+separate out configurable 'data sets' from procedural code
+
+- lib/compiler/28msec.json
+  this is is read when the *processor* option set to '28msec'
+  either in config.json or passed as an param to xqlint
+
+  The idea is to have one file for each processor
+
+- lib/compiler/default_function.namespaces.json
+- lib/compiler/namespaces.json
+
+Modify main entry point lib/xqlint.js
+ TODO! 
+at the moment JSONiqParser is set by reading file extension
+so remove then
+ - default to one default lexer/parser
+ - alt parser/lexer should be set via config
+
+If we need an alt lexer/parser enabled for xQuery processor dependent requirements, the idea is to create alt lexer/parser ebnf covering these requirements and regenerate the lexer/parser js files.
+If the config files has an alt key then the alternate lexer/parser will be used.
+
+ TODO! 
+ - try xQuery 3.1 : test for arrow expression
+ - try eXist ebnf covering eXist specfic 'update' expressions
+
+Add bin exec 'xQlint'
+  that accepts stdin so linting can happen on-buffer-text-change, rather than on-file-change
+
+
+Anything else?
+<!--
+
+Look at  using xqlint to implement Language Server Protocol stuff
+
+ - hover:  ( in vim normal mode )
+If a language server holds the source text AST in memory
+then an 'xQinfo' function that accepts line and col params
+could return AST parser context. There would no need to resend source text.
+
+ - format  'xQformat' a stdio buffer not a file
+
+ - completer  given insert position belongs to a prior known AST parser context
+ held be the language server there should be no need to resend source text and reparse
+
+https://github.com/wcandillon/xqlint/issues/58
+-->
+
 #XQLint
 [![Build Status](http://img.shields.io/travis/wcandillon/xqlint/master.svg?style=flat)](https://travis-ci.org/wcandillon/xqlint) [![NPM version](http://img.shields.io/npm/v/xqlint.svg?style=flat)](http://badge.fury.io/js/xqlint) [![Code Climate](http://img.shields.io/codeclimate/github/wcandillon/xqlint.svg?style=flat)](https://codeclimate.com/github/wcandillon/xqlint)
 

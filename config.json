@@ -1,0 +1,8 @@
+{ "options" : {
+  "styleCheck": false,
+  "processor": "28msec"
+},
+"lexer" : "lib/lexers/XQueryTokenizer.ebnf",
+"parser" : "lib/parsers/XQueryParser.ebnf"
+}
+
