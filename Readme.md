@@ -1,4 +1,5 @@
-#GRANTMACKEN ROUGH NOTES:
+
+## GRANTMACKEN ROUGH NOTES
 
 Add 'config.json' file so user can
  - set default options passed to xQlint
